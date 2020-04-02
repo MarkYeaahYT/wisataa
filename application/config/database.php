@@ -75,14 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => 'sql203.unaux.com',
 	'hostname' => '127.0.0.1',
-	// 'username' => 'unaux_24589432',
 	'username' => 'root',
-	// 'password' => 'a7mfcu1qe5o94xd',
 	'password' => '',
-	// 'database' => 'unaux_24589432_drop',
-	'database' => 'tmpfile',
+	'database' => 'Travel',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
