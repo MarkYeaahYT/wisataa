@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <div class="container-fluid">
-        <a href="#" class="navbar-brand">Brand</a>
+        <a href="#" class="navbar-brand">Travel Bantul</a>
         <div class="navbar-nav">
             <form class="form-inline ">
                 <div class="input-group">                    

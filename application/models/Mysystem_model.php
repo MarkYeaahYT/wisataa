@@ -1,6 +1,6 @@
 <?php
 
-class System_model extends CI_Model{
+class Mysystem_model extends CI_Model{
 
     public function login()
     {
@@ -13,6 +13,11 @@ class System_model extends CI_Model{
     }
 
     public function logout()
+    {
+        # code...
+    }
+
+    public function detail()
     {
         # code...
     }
