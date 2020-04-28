@@ -30,6 +30,13 @@ class Admin extends CI_Controller{
         
     }
 
+    public function page()
+    {
+        # code...
+        $this->load->view("admin");
+        
+    }
+
 
 }
 ?>

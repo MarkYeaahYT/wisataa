@@ -8,13 +8,16 @@
     <script src="<?php echo base_url("assets/bootstrap/js/jquery.min.js") ?>"></script>
     <script src="<?php echo base_url("assets/bootstrap/js/bootstrap.min.js") ?>"></script>
     <script src="<?php echo base_url("assets/bootstrap/js/fontawesome.js") ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/js/jquery.dataTables.js") ?>"></script>
+    <script src="<?php echo base_url("assets/bootstrap/js/dataTables.bootstrap4.js") ?>"></script>
 
     
 
     <!-- Css -->
-    <link rel="stylesheet" href="<?php echo site_url("assets/bootstrap/css/bootstrap.min.css") ?>">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo site_url("assets/font-awesome-4.7.0/css/font-awesome.min.css") ?>">
+    <link rel="stylesheet" href="<?php echo site_url("assets/bootstrap/css/jquery.dataTables.css") ?>">
+    <link rel="stylesheet" href="<?php echo site_url("assets/bootstrap/css/dataTables.bootstrap4.css") ?>">
 
     <title>Document</title>
 </head>
