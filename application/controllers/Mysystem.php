@@ -9,12 +9,6 @@ class Mysystem extends CI_Controller{
         $this->load->model("mysystem_model");
     }
 
-    public function login()
-    {
-        # code...
-        echo json_encode($this->system_model->login());
-    }
-
     public function register()
     {
         # code...

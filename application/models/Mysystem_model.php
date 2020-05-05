@@ -2,10 +2,6 @@
 
 class Mysystem_model extends CI_Model{
 
-    public function login()
-    {
-        # code...
-    }
 
     public function register()
     {
