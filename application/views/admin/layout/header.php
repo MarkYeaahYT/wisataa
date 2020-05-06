@@ -14,12 +14,13 @@
     
 
     <!-- Css -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="<?php echo site_url("assets/bootstrap/css/bootstrap.min.css") ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/font-awesome-4.7.0/css/font-awesome.min.css") ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/bootstrap/css/jquery.dataTables.css") ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/bootstrap/css/dataTables.bootstrap4.css") ?>">
 
-    <title>Document</title>
+    <title>Travel Bantul | Admin</title>
 </head>
 <body>
     
