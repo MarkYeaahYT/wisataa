@@ -38,3 +38,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 /application/controllers/Unit.php
 /application/models/Unit_model.php
+/application/views/unit/*
