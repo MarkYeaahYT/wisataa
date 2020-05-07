@@ -1,30 +1,36 @@
 <?php
-class Mysystem extends CI_Controller{
+class My extends CI_Controller{
 
     public function __construct()
     {
         # code...
         parent::__construct();
         $this->load->helper("url");
-        $this->load->model("mysystem_model");
+        $this->load->model("my_model");
     }
 
     public function register()
     {
         # code...
-        echo json_encode($this->system_model->register());
+        echo json_encode($this->my_model->register());
     }
     
     public function logout()
     {
         # code...
-        echo json_encode($this->system_model->logout());
+        echo json_encode($this->my_model->logout());
     }
 
     public function detail()
     {
         # code...
         $this->load->view("detail");
+    }
+
+    public function show_data()
+    {
+        # code...
+        echo json_encode($this->my_model->show_data());
     }
 }
 ?>
