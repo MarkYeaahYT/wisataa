@@ -22,4 +22,5 @@
     
     <script>
         var base_url = "<?php echo base_url(); ?>";
+        // console.log(base_url);
     </script>

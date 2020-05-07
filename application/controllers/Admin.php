@@ -5,7 +5,6 @@ class Admin extends CI_Controller{
     {
         # code...
         parent::__construct();
-        $this->load->helper("url");
         $this->load->model("admin_model");
     }
 
@@ -32,7 +31,7 @@ class Admin extends CI_Controller{
 
     public function page()
     {
-        # code...
+        # code... VIEW
         $this->load->view("admin");
         
     }

@@ -18,7 +18,7 @@
     <div class="container border">
         <h3>Data</h3>
         <div class="pb-3">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open </button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">Tambah</button>
 
             <!-- <button id="tambah" class="btn btn-info">Tambah</button> -->
         </div>
@@ -41,11 +41,11 @@
 </div>
 
 <!-- Modal Add -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -53,18 +53,26 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
+                        <label for="destinasi" class="col-form-label">Destinasi</label>
+                        <input type="text" class="form-control" id="destinasi">
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
+                        <label for="urlgmap" class="col-form-label">URL Google Map</label>
+                        <input type="text" class="form-control" id="urlgmap">
+                    </div>
+                    <div class="form-group">
+                        <label for="photo" class="col-form-label">Photo</label>
+                        <input type="file" class="form-control" id="photo">
+                    </div>
+                    <div class="form-group">
+                        <label for="artikel" class="col-form-label">Artikel</label>
+                        <textarea class="form-control" id="artikel"></textarea>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
+                <button type="button" class="btn btn-primary">Save</button>
             </div>
         </div>
     </div>
@@ -74,7 +82,29 @@
 <link rel="stylesheet" href="<?php echo base_url("assets/css/style4.css") ?>">
 <script type="text/javascript">
     $(document).ready(function () {
-        var table = $('#mytable').DataTable();
+        var table = $('#mytable').DataTable({
+            ajax: {
+                url: base_url+"my/show_data",
+                dataSrc: ''
+            },
+            columns: [
+                {data: 'id_destination'},
+                {data: 'nama_dest'},
+                {render: function (data, type ,row) {
+                    return '<a href="javascript:void(0);" class="btn btn-info item-edit"'+
+                        'data-nama="'+row.nama_dest+
+                        '"data-id="'+row.id_destination+
+                        '" >Edit</a>'+
+                        '<a href="javascript:void(0);" class="btn btn-danger item-del" data-id="'+row.id_destination+'">Del</a>'
+                }}
+            ]
+        });
+
+        table.on('order.dt search.dt', function(){
+		    table.column(0, {search: 'applied', order: 'applied'}).nodes().each(function (cell, i) { 
+		        cell.innerHTML = i + 1;
+		    });
+	    })
 
         $('#sidebarCollapse').on('click', function () {
             $('#sidebar').toggleClass('active');
