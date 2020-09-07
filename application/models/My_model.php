@@ -15,7 +15,9 @@ class My_model extends CI_Model{
 
     public function detail()
     {
-        # code...
+        $id = $this->input->get("id", true);
+        $this->db->where("id_destination", $id);
+        return $this->db->get("destinations")->result();
     }
 
     public function generate_id()

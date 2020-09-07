@@ -7,16 +7,18 @@
     <div class="container">
         <div class="row">
             <div class="mx-auto">
-                <img src="<?php echo site_url("assets/background/index.jpeg") ?>" alt="" class="img-fluid rounded" height="400" width="600">
+                <img alt="" class="img-fluid rounded myimg" height="400" width="600">
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <div class="container p-5">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil deleniti magnam repudiandae autem nulla ipsa ducimus reprehenderit nostrum assumenda voluptatibus nemo sit, eum quos repellendus perferendis voluptatum quod sapiente harum.</p>
+                    <p class="myartikel"></p>
+                    <button class="gmaps btn btn-success">Google Maps</button>
                 </div>
             </div>
         </div>
+        
         <div class="row border rounded pb-3 mb-3">
             <div class="container bg-light p-2">
                 <h4>Komentar</h4>
@@ -46,3 +48,4 @@
         </div>
     </div>
 </div>
+<script src="<?php echo base_url("assets/js/detail.js") ?>"></script>
