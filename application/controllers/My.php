@@ -26,11 +26,17 @@ class My extends CI_Controller{
         # code...
         $this->load->view("detail");
     }
-
+    
     public function show_data()
     {
         # code...
         echo json_encode($this->my_model->show_data());
+    }
+
+    public function detail_xhr()
+    {
+        # code...
+        echo json_encode($this->my_model->detail());
     }
 }
 ?>

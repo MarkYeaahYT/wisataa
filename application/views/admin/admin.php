@@ -72,17 +72,80 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-primary save">Save</button>
             </div>
         </div>
     </div>
 </div>
 <!-- Modal Add -->
+<!-- Modal edit -->
+<div class="modal fade" id="ModalEdt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="destinasi_e" class="col-form-label">Destinasi</label>
+                        <input type="text" class="form-control" id="destinasi_e">
+                        <input type="text" class="form-control" id="id_e" hidden>
+                    </div>
+                    <div class="form-group">
+                        <label for="urlgmap_e" class="col-form-label">URL Google Map</label>
+                        <input type="text" class="form-control" id="urlgmap_e">
+                    </div>
+                    <div class="form-group">
+                        <label for="photo_e" class="col-form-label">Photo</label>
+                        <input type="file" class="form-control" id="photo_e">
+                    </div>
+                    <div class="form-group">
+                        <label for="artikel_e" class="col-form-label">Artikel</label>
+                        <textarea class="form-control" id="artikel_e"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary edit">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal edit -->
+<!-- Modal hapus -->
+<div class="modal fade" id="ModalDel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <input type="text" class="form-control" id="id_hapus" hidden>
+
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Yakin ingin menghapus</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger del">Hapus</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal hapus -->
 
 <link rel="stylesheet" href="<?php echo base_url("assets/css/style4.css") ?>">
 <script type="text/javascript">
+    var table;
     $(document).ready(function () {
-        var table = $('#mytable').DataTable({
+        table = $('#mytable').DataTable({
             ajax: {
                 url: base_url+"my/show_data",
                 dataSrc: ''
@@ -93,6 +156,8 @@
                 {render: function (data, type ,row) {
                     return '<a href="javascript:void(0);" class="btn btn-info item-edit"'+
                         'data-nama="'+row.nama_dest+
+                        '"data-url="'+row.urlgmaps+
+                        '"data-artikel="'+row.artikel+
                         '"data-id="'+row.id_destination+
                         '" >Edit</a>'+
                         '<a href="javascript:void(0);" class="btn btn-danger item-del" data-id="'+row.id_destination+'">Del</a>'
