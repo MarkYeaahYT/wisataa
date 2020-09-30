@@ -3,13 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	public function index()
+	public function __construct()
 	{
-		$this->load->view("index");
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->model('welcome_m');
+		
+		
 	}
 
-	public function packages()
+	public function index()
 	{
 		$this->load->view("tampilan/packages");
 	}
+
+	public function showdata_xhr()
+	{
+	 	echo json_encode($this->welcome_m->showdata_xhr());
+	}
+	
 }

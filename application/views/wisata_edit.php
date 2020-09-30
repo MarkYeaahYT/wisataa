@@ -16,7 +16,7 @@
 
 					<div class="form-group">
 						<label >URL:</label>
-						<input type="text" name="url" class="form-control" value="<?php echo $row->urlgmaps ?>">
+						<input type="url" name="url" class="form-control" value="<?php echo $row->urlgmaps ?>">
 					</div>
 					
 					<div class="form-group">
