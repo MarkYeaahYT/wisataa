@@ -33,13 +33,13 @@
 									<th scope="row"><?php echo $no++; ?></th>
 									<td><?php echo $row->id_destination; ?></td>
 									<td><?php echo $row->nama_dest; ?></td>
-									<td><?php echo $row->urlgmaps ?></td>
+									<td><?php echo substr($row->urlgmaps, 0, 30) ?> ....</td>
 									<td>
 										<img src="<?php echo base_url('/assets/upload/'.$row->image);?>" style="width: 80px">
 									</td>
-									<td><?php echo $row->artikel ?></td>
-									<td><a href="<?php echo site_url('Wisata/delete/'.$row->id_destination); ?>" class="btn btn-danger" onclick=" return confirm('Apakah anda yakin akan menghapus?')">Hapus</a>
-										<a href="<?php echo site_url('Wisata/select_by/'.$row->id_destination); ?>" class="btn btn-info">Edit</a>
+									<td><?php echo substr($row->artikel, 0, 30) ?> ....</td>
+									<td><a href="<?php echo site_url('Wisata/delete/'.$row->id_destination); ?>" class="btn btn-danger" onclick=" return confirm('Apakah anda yakin akan menghapus?')"> <i class="fa fa-trash"></i> </a>
+										<a href="<?php echo site_url('Wisata/select_by/'.$row->id_destination); ?>" class="btn btn-info"> <i class="fa fa-cog"></i> </a>
 									</td>
 								</tr>
 							<?php } ?>
