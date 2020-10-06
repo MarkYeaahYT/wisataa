@@ -30,7 +30,7 @@
       <li class="nav-item">
         <a class="nav-link" href="Wisata/index/">
           <i class="fas fa-fw fa-tachometer-alt text-primary"></i>
-          <span>Destinasi</span></a>
+          <span>Dasboard</span></a>
       </li>
     </ul>
     <!-- Sidebar -->
