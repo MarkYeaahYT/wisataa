@@ -21,5 +21,11 @@ class Welcome extends CI_Controller {
 	{
 	 	echo json_encode($this->welcome_m->showdata_xhr());
 	}
+
+	public function cari_xhr()
+	{
+	 	echo json_encode($this->welcome_m->cari_xhr());
+	}
+
 	
 }

@@ -54,6 +54,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li class="active"><a href="packages.html">Packages</a></li>
 				<li class=""><a href="contact.html">Contact</a></li>
 				<li class="booking"><a href="booking.html">Book Now</a></li> -->
+			
+				<input id="cari" class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
 			</ul>
 		</nav>
 		<!-- //nav -->
