@@ -1,6 +1,10 @@
 var url = window.location.origin;
 
 $(document).ready(function () {
+    $(".banner_inner").css("min-height", "300px");
+    $(".banner_inner_overlay").css("min-height", "300px");
+    $("#home").css('background-image', 'url("/assets/images/banner1.jpg")');
+
     $.ajax({
         type: "GET",
         url: url+"/welcome/showdata_xhr",
@@ -19,7 +23,7 @@ $(document).ready(function () {
 					+'<h5 class="my-2"> '+e.nama_dest+' </h5>'
 					+'<p class=""> '+e.artikel+' </p>'
 					+'<ul class="listing mt-3">'
-					+'<a target="_blank" href="'+e.urlgmaps+'" class="btn btn-info">Go'
+					+'<a href="/welcome/detail?id='+e.id_destination+'" class="btn btn-info">Go'
 					+'</ul>'
 				+'</div>'
                 +'</div>';

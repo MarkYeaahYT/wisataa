@@ -1,24 +1,27 @@
 $(document).ready(function () {
-    var url_string = window.location.href;
-    var url = new URL(url_string);
+    $(".banner_inner").css("min-height", "500px");
+    // $(".banner_inner_overlay").css("min-height", "500px");
+
+    var url_s = window.location.href;
+    var url = new URL(url_s);
     var id = url.searchParams.get("id");
+
+    var myurl = window.location.origin;
 
     $.ajax({
         type: "GET",
-        url: base_url+"my/detail_xhr",
+        url: myurl+"/welcome/detail_xhr",
         data: {
             id: id
         },
         dataType: "JSON",
-        success: function (response) {
-            $(".myimg").attr("src", base_url+"uploads/"+response[0].image);
-            $(".myartikel").text(response[0].artikel);
-            $(".gmaps").attr("data-maps", response[0].urlgmaps);
+        success: function (r) {
+            console.log(r)
+            $("#home").css('background-image', 'url("/assets/upload/'+r[0].image+'")');
+            $("#judul").text(r[0].nama_dest);
+            $("#artikel").text(r[0].artikel);
+            $("#visit").attr("href", r[0].urlgmaps);
         }
     });
 
-    $(".gmaps").on("click", function () {
-        var url = $(this).data("maps");
-        window.open(url, "_blank");
-    });
 });

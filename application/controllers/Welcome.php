@@ -16,15 +16,26 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view("tampilan/packages");
 	}
-
+	
 	public function showdata_xhr()
 	{
 	 	echo json_encode($this->welcome_m->showdata_xhr());
 	}
-
+	
 	public function cari_xhr()
 	{
-	 	echo json_encode($this->welcome_m->cari_xhr());
+		echo json_encode($this->welcome_m->cari_xhr());
+	}
+	
+	public function detail()
+	{
+		$this->load->view("tampilan/detail");
+		
+	}
+	
+	public function detail_xhr()
+	{
+		echo json_encode($this->welcome_m->detail_xhr());
 	}
 
 	
