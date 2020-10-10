@@ -28,7 +28,7 @@
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
-        <a class="nav-link" href="Wisata/index/">
+        <a class="nav-link" href="/wisata">
           <i class="fas fa-fw fa-tachometer-alt text-primary"></i>
           <span>Dasboard</span></a>
       </li>

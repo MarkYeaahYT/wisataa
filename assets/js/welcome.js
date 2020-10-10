@@ -65,6 +65,7 @@ $(document).ready(function () {
                         
                         $("#datahere").append(html);
                     });
+					window.scroll({top: 150,down: 0, behavior: "smooth"})
                 }
             });
         }
