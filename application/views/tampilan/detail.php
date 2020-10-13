@@ -90,6 +90,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                     </div>
                 </div>
+
+				<div class="container">
+					<br>
+					<br>
+				</div>
+				<!-- comen -->
+                <div class="card bg-dark" style="width: 35rem;">
+                    <div class="card-body">
+						<div>
+							<p class="text-light">Comentar anda</p>
+							<div class="container d-flex">
+								<div class="pr-2">
+									<img src="/uploads/default.png" alt="" width="35" height="35" class="rounded-circle">
+								</div>
+								<div>
+									<input type="text" id="nama" class="form-control red-border" placeholder="Nama">
+								</div>
+							</div>
+							<div class="pt-2 container">
+								<input type="text" id="comment" class="form-control red-border" placeholder="Comentar">
+								<br>
+								<button class="btn btn-info btncomment">Post</button>
+							</div>
+						</div>
+						<!-- <br> -->
+						<div class="mybois">
+								<!-- JS proces -->
+						</div>
+                    </div>
+                </div>
 		
 		</div>
 	</div>
@@ -101,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--footer -->
 <footer>
-<section class="footer footer_w3layouts_section_1its py-5">
+<!-- <section class="footer footer_w3layouts_section_1its py-5"> -->
 	<!--  -->
 </section>
 </footer>

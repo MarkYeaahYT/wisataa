@@ -38,5 +38,14 @@ class Welcome extends CI_Controller {
 		echo json_encode($this->welcome_m->detail_xhr());
 	}
 
+	public function comentar()
+	{
+		echo json_encode($this->welcome_m->comentar());
+	}
+
+	public function showcomentar_xhr()
+	{
+		echo json_encode($this->welcome_m->showcomentar_xhr());
+	}
 	
 }

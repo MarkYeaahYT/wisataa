@@ -1,4 +1,10 @@
 <?php $this->load->view('headfoot/header') ?>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+<script type="text/javascript">
+	$(function() {
+		CKEDITOR.replace('ckeditor');
+	});
+</script> -->
 <div class="container-fluid">
 	<!-- Row -->
 	<div class="card mb-4">
@@ -24,7 +30,7 @@
 
 				<div class="form-group">
 					<label>Artikel:</label>
-					<textarea name="artikel" class="form-control"></textarea>
+					<textarea id="ckeditor" name="artikel" class="form-control"></textarea>
 				</div>
 
 				<button class="btn btn-success" type="submit">Simpan</button>
