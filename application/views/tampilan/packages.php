@@ -86,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- tour packages -->
 
 <!-- destinations -->
-<section class="destinations py-5" id="destinations">
+<!-- <section class="destinations py-5" id="destinations">
 	<div class="container py-xl-5 py-lg-3">
 		<h3 class="heading text-capitalize text-center"> Popular Destinations</h3>
 		<p class="text mt-2 mb-5 text-center"></p>
@@ -177,7 +177,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 <!-- destinations -->
 
 <!--footer -->
