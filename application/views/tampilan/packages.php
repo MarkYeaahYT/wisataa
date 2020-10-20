@@ -74,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- tour packages -->
 <section class="packages pt-5">
 	<div class="container py-lg-4 py-sm-3">
-		<h2 class="heading text-capitalize text-center"> Discover our tour packages</h2>
+		<h2 class="heading text-capitalize text-center"> Choose Your Destinations</h2>
 		<p class="text mt-2 mb-5 text-center"></p>
 		<div class="row" id="datahere">
 
