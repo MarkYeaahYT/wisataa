@@ -10,6 +10,7 @@ class Login extends CI_Controller{
 	function login_proses(){
 		$username = $this->input->post('username');
 		$pass = $this->input->post('password');
+		$pass = md5($pass);
 		$result = $this->Wisata_m->do_login($username, $pass);
 
 		if($result->num_rows() > 0){
