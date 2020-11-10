@@ -61,6 +61,13 @@ class Welcome_m extends CI_Model{
         $this->db->where("id_destination", $id);
         return $this->db->get("comentar")->result();
     }
+
+    public function addvisitors()
+    {
+        
+    }
+
+
 }
 
 ?>
