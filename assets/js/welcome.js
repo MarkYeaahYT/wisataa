@@ -11,7 +11,7 @@ $(document).ready(function () {
         data: "",
         dataType: "JSON",
         success: function (r) {
-            // console.log(r)
+            console.log(r)
             r.forEach(e => {
                 // console.log(e.id_destination)
                 var html = ' <div class="col-lg-3 col-sm-6 mb-5">'
@@ -19,7 +19,9 @@ $(document).ready(function () {
 					+'<img src="/assets/upload/'+e.image+'" alt="" class="img-fluid" />'
 				+'</div>'
 				+'<div class="package-info">'
-					+'<h6 class="mt-1"><span class="fa fa-map-marker mr-2"></span>.<i class="fa fa-eye"></i> 1000 <i class="fa fa-comment"></i> 55 <i class="fa fa-star">4</i> </h6>'
+					// +'<h6 class="mt-1"><span class=" fa fa-map-marker mr-2"></span>.<i class="fa fa-eye"></i> 1000 <i class="fa fa-comment"></i> 55 <i class="fa fa-star">4</i> </h6>'
+                    +'<a href="'+e.urlgmaps+'"> <span class=" fa fa-map-marker mr-2"></span></a>'
+                    +'<i class="fa fa-eye"></i> 1000 <i class="fa fa-comment"></i> 55 <i class="fa fa-star">4</i>'
 					+'<h5 class="my-2"> '+e.nama_dest+' </h5>'
 					+'<p class=""> '+e.artikel.slice(0, 75)+' ...</p>'
 					+'<ul class="listing mt-3">'
@@ -35,7 +37,7 @@ $(document).ready(function () {
 
     // 
 
-    // $(".btngoes").on("click", function () {
+    // $(".urlgmaps").on("click", function () {
     //     console.log("yeah")
     // });
 
