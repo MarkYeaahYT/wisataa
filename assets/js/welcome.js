@@ -16,7 +16,7 @@ $(document).ready(function () {
                 // console.log(e.id_destination)
                 var html = ' <div class="col-lg-3 col-sm-6 mb-5">'
 				+'<div class="image-tour position-relative">'
-					+'<img src="/assets/upload/'+e.image+'" alt="" class="img-fluid" />'
+					+'<img src="/assets/uploads/'+e.image+'" alt="" class="img-fluid" />'
 				+'</div>'
 				+'<div class="package-info">'
 					// +'<h6 class="mt-1"><span class=" fa fa-map-marker mr-2"></span>.<i class="fa fa-eye"></i> 1000 <i class="fa fa-comment"></i> 55 <i class="fa fa-star">4</i> </h6>'
@@ -57,7 +57,7 @@ $(document).ready(function () {
                         // console.log(e.id_destination)
                         var html = ' <div class="col-lg-3 col-sm-6 mb-5">'
                         +'<div class="image-tour position-relative">'
-                            +'<img src="/assets/upload/'+e.image+'" alt="" class="img-fluid" />'
+                            +'<img src="/assets/uploads/'+e.image+'" alt="" class="img-fluid" />'
                         +'</div>'
                         +'<div class="package-info">'
                             +'<h6 class="mt-1"><span class="fa fa-map-marker mr-2">  </span>.</h6>'
