@@ -9,7 +9,12 @@ class Welcome_m extends CI_Model{
     public function cari_xhr()
     {
         $cari = $this->input->post("cari", true);
-        return $this->db->query("select * from destinations where nama_dest like '%$cari%'")->result();
+        $this->db->select("*");
+        $this->db->from("destinations");
+        $this->db->join("wilayah", "destinations.id_wilayah = wilayah.id_wilayah");
+        $this->db->where("nama_dest like '%$cari%' OR wilayah like '%$cari%'");
+        return $this->db->get()->result();
+        // $two = $this->db->query("select * from destinations where nama_dest like '%$cari%'")->result();
     }
 
     public function detail_xhr()
@@ -32,6 +37,26 @@ class Welcome_m extends CI_Model{
             }
             $this->db->where("id_destination", $result);;
             $query = $this->db->get("destinations")->num_rows();
+            if ($query == 0){
+                $generate = false;
+            }
+        }
+        return $result;
+	}
+
+    public function genid_vivitor()
+    {
+        $lenght = 4;
+        $character = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $characterLenght = strlen($character);
+        $generate = true;
+        while ($generate) {
+            $result = "";
+            for ($i=0; $i < $lenght; $i++) { 
+                $result .= $character[rand(0, $characterLenght -1 )];
+            }
+            $this->db->where("id_visitor", $result);;
+            $query = $this->db->get("visitor")->num_rows();
             if ($query == 0){
                 $generate = false;
             }
@@ -64,21 +89,31 @@ class Welcome_m extends CI_Model{
 
     public function addvisitors()
     {
-        $cok = get_cookie("visitor");
-        if($cok == null){
+        // $cookie = array(
+        //     'name'   => 'visitor',
+        //     'value'  => 'milkgang',                            
+        //     'expire' => '45000',                                                                                   
+        // );
+        // set_cookie($cookie);
+        // return $cok;
+        
+        $dest = $this->input->post("dest");
+        $cok = get_cookie($dest);
+        if($cok != $dest){
             $cookie = array(
-                'name'   => 'visitor',
-                'value'  => '1',                            
-                'expire' => '45000',                                                                                   
-                'secure' => TRUE
+                'name'   => "$dest",
+                'value'  => "$dest",                            
+                'expire' => "45000",                                                                                   
                 );
             set_cookie($cookie);
 
-            $this->db->set("id");
-
+            $this->db->set("id_visitor", $this->genid_vivitor());
+            $this->db->set("id_destination", $dest);
+            return $this->db->insert("visitor");
+        }else{
+            return array("wasvisited", "yeah");
         }
     }
-
 
 }
 

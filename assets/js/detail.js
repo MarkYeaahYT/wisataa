@@ -23,6 +23,19 @@ $(document).ready(function () {
             $("#judul").text(r[0].nama_dest);
             $("#artikel").text(r[0].artikel);
             $("#visit").attr("href", r[0].urlgmaps);
+
+            // increase visitor
+            $.ajax({
+                type: "POST",
+                url: myurl+"/welcome/addvisitors",
+                data: {
+                    dest: id
+                },
+                dataType: "JSON",
+                success: function (r) {
+                    console.log(r);
+                }
+            });
         }
     });
 
