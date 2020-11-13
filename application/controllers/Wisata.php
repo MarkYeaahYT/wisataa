@@ -116,6 +116,8 @@ class Wisata extends CI_Controller
 		redirect('Wisata');
 	}
 
+	
+
 }
 
 ?>

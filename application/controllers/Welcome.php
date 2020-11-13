@@ -27,6 +27,10 @@ class Welcome extends CI_Controller {
 		echo json_encode($this->welcome_m->cari_xhr());
 	}
 	
+	public function wilayah(){
+		$data['wilayah']=$this->welcome_m->wilayah();
+	}
+
 	public function detail()
 	{
 		$this->load->view("tampilan/detail");

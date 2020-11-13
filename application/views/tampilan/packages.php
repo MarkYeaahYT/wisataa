@@ -27,6 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="/assets/css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
     <link href="/assets/css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
     <link href="/assets/css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<!-- //css files -->
 	
 	<!-- google fonts -->
@@ -45,8 +46,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div id="logo">
 				<h1 class="mt-md-0 mt-2"> <a href="/"><span class="fa fa-map-signs"></span> Wizata </a></h1>
 			</div>
+			<ul>
+				<div class="dropdown">
+				<a href="#" class="nav-link js-scroll-trigger dropdown-toggle"  data-toggle="dropdown">WILAYAH
+					<span class="caret"></span></a>
+					<ul class="dropdown-menu" >
+						<?php 
+						foreach ($wilayah as $row) {?>
+							<li><a href="<?php echo site_url('welcome/wilayah/'.$row->id_wilayah) ?>"><?php  echo $row->wilayah ?></a></li>
+						<?php } ?>
+					</ul>
+					</div>
+			</ul>
 			<label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
 			<input type="checkbox" id="drop" />
+			
 			<ul class="menu ml-auto mt-1">
 				<!-- <li class=""><a href="index.html">Home</a></li>
 				<li class=""><a href="about.html">About Us</a></li>
@@ -109,5 +123,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- move top -->
 	<script src="/assets/bootstrap/js/jquery.min.js"></script>
 	<script src="/assets/js/welcome.js"></script>
+	<script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 </html>

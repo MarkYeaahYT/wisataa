@@ -66,7 +66,9 @@ class Welcome_m extends CI_Model{
     {
         
     }
-
+    function wilayah(){
+        return $this->db->query("SELECT * FROM wilayah")->result();
+    }
 
 }
 
