@@ -8,8 +8,7 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('welcome_m');
-		
-		
+		$this->load->helper('cookie');
 	}
 
 	public function index()
@@ -47,5 +46,12 @@ class Welcome extends CI_Controller {
 	{
 		echo json_encode($this->welcome_m->showcomentar_xhr());
 	}
+
+	public function addvisitors()
+	{
+		echo json_encode($this->welcome_m->addvisitors());
+	}
+
+
 	
 }

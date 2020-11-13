@@ -64,7 +64,19 @@ class Welcome_m extends CI_Model{
 
     public function addvisitors()
     {
-        
+        $cok = get_cookie("visitor");
+        if($cok == null){
+            $cookie = array(
+                'name'   => 'visitor',
+                'value'  => '1',                            
+                'expire' => '45000',                                                                                   
+                'secure' => TRUE
+                );
+            set_cookie($cookie);
+
+            $this->db->set("id");
+
+        }
     }
 
 
