@@ -116,7 +116,6 @@ class Wisata extends CI_Controller
 		redirect('Wisata');
 	}
 
-<<<<<<< HEAD
 	//comentar
 	function comentar(){
 		$data['comentar']=$this->Wisata_m->comentar();	
@@ -125,10 +124,6 @@ class Wisata extends CI_Controller
 	
 
 
-=======
-	
-
->>>>>>> 0ae65c2cf60b8df75db862d4653129bd5538c0d5
 }
 
 ?>
