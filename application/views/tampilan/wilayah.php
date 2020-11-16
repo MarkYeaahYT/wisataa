@@ -27,6 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="/assets/css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
     <link href="/assets/css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
     <link href="/assets/css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<!-- //css files -->
 	
 	<!-- google fonts -->
@@ -45,6 +46,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div id="logo">
 				<h1 class="mt-md-0 mt-2"> <a href="/"><span class="fa fa-map-signs"></span> Wizata </a></h1>
 			</div>
+			<ul>
+				<div class="dropdown">
+				<a href="#" class="nav-link js-scroll-trigger dropdown-toggle"  data-toggle="dropdown">WILAYAH
+					<span class="caret"></span></a>
+					<ul class="dropdown-menu" >
+						<?php 
+						foreach ($wilayah as $row) {?>
+							<li><a href="<?php echo site_url('welcome/wilayah/'.$row->id_wilayah) ?>"><?php  echo $row->wilayah ?></a></li>
+						<?php } ?>
+					</ul>
+					</div>
+			</ul>
 			<label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
 			<input type="checkbox" id="drop" />
 			<ul class="menu ml-auto mt-1">
@@ -55,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li class=""><a href="contact.html">Contact</a></li>
 				<li class="booking"><a href="booking.html">Book Now</a></li> -->
 			
-				<!-- <input id="cari" class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search"> -->
+				<input id="cari" class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
 			</ul>
 		</nav>
 		<!-- //nav -->
@@ -74,66 +87,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- tour packages -->
 <section class="packages pt-5">
 	<div class="container py-lg-4 py-sm-3">
-		<h2 id="judul" class="heading text-capitalize text-center"> </h2>
+		<h2 class="heading text-capitalize text-center"> Choose Your Destinations</h2>
 		<p class="text mt-2 mb-5 text-center"></p>
-		<h6 class="mt-1"><i class="fa fa-eye visitor"></i>  <i class="fa fa-comment comment"></i>  </h6>'
+		<div class="row" id="wilayah">
 
-		<div class="row" id="datahere">
-
-                <!--JS process  -->
-                <div class="card" style="width: 75rem;">
-                    <div class="card-body">
-                        <center>
-                            <h5 id="artikel" class="card-title"></h5>
-
-                            <a id="visit" target="_blank" class="card-link">Visit</a>
-                        </center>
-                        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                    </div>
-                </div>
-
-				<div class="container">
-					<br>
-					<br>
-				</div>
-				<!-- comen -->
-                <div class="card bg-dark" style="width: 35rem;">
-                    <div class="card-body">
-						<div>
-							<p class="text-light">Comentar anda</p>
-							<div class="container d-flex">
-								<div class="pr-2">
-									<img src="/uploads/default.png" alt="" width="35" height="35" class="rounded-circle">
-								</div>
-								<div>
-									<input type="text" id="nama" class="form-control red-border" placeholder="Nama">
-								</div>
-							</div>
-							<div class="pt-2 container">
-								<input type="text" id="comment" class="form-control red-border" placeholder="Comentar">
-								<br>
-								<button class="btn btn-info btncomment">Post</button>
-							</div>
-						</div>
-						<!-- <br> -->
-						<div class="mybois">
-								<!-- JS proces -->
-						</div>
-                    </div>
-                </div>
+				<!--JS process  -->
 		
 		</div>
 	</div>
 </section>
 <!-- tour packages -->
 
-<!-- destinations -->
-<!-- destinations -->
 
 <!--footer -->
 <footer>
-<!-- <section class="footer footer_w3layouts_section_1its py-5"> -->
+<section class="footer footer_w3layouts_section_1its py-5">
 	<!--  -->
 </section>
 </footer>
@@ -153,6 +121,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- move top -->
 	<script src="/assets/bootstrap/js/jquery.min.js"></script>
-	<script src="/assets/js/detail.js"></script>
+	<script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="/assets/js/wilayah.js"></script>
 </body>
 </html>
