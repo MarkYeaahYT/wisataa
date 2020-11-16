@@ -116,6 +116,14 @@ class Wisata extends CI_Controller
 		redirect('Wisata');
 	}
 
+	//comentar
+	function comentar(){
+		$data['comentar']=$this->Wisata_m->comentar();	
+		$this->load->view('wisata_comen', $data);
+	}
+	
+
+
 }
 
 ?>

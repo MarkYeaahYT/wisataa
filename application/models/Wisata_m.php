@@ -40,6 +40,11 @@ class Wisata_m extends CI_Model
 	function do_login($username, $pass){
 		return $this->db->query("SELECT * FROM admin WHERE username='$username' AND password='$pass' ");
 	}
+
+	//comentar
+	function comentar(){
+		return $this->db->query("SELECT * FROM comentar  INNER JOIN destinations ON comentar.id_destination=destinations.id_destination")->result  ();
+	}
 }
 
 ?>

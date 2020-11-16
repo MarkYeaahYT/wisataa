@@ -32,6 +32,11 @@
           <i class="fas fa-fw fa-tachometer-alt text-primary"></i>
           <span>Dasboard</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('Wisata/comentar') ?>">
+          <i class="fas fa-fw fa-tachometer-alt text-primary"></i>
+          <span>Comentar</span></a>
+      </li>
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
