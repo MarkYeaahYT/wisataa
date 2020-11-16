@@ -15,7 +15,15 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view("tampilan/packages");
+		$data['wilayah']=$this->welcome_m->wilayah();
+		$this->load->view("tampilan/packages", $data);
+	}
+
+	public function wilayah($id_wilayah)
+	{
+		$data['wilayah']=$this->welcome_m->wilayah();
+		$data['select_wilayah']=$this->welcome_m->select_wilayah($id_wilayah);
+		$this->load->view("tampilan/wilayah", $data);
 	}
 	
 	public function showdata_xhr()
@@ -54,6 +62,9 @@ class Welcome extends CI_Controller {
 		echo json_encode($this->welcome_m->addvisitors());
 	}
 
-
+	public function select_id_wilayah()
+	{
+		echo json_encode($this->welcome_m->select_id_wilayah());
+	}
 	
 }

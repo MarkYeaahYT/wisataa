@@ -89,13 +89,7 @@ class Welcome_m extends CI_Model{
 
     public function addvisitors()
     {
-        // $cookie = array(
-        //     'name'   => 'visitor',
-        //     'value'  => 'milkgang',                            
-        //     'expire' => '45000',                                                                                   
-        // );
-        // set_cookie($cookie);
-        // return $cok;
+      
         
         $dest = $this->input->post("dest");
         $cok = get_cookie($dest);
@@ -113,6 +107,23 @@ class Welcome_m extends CI_Model{
         }else{
             return array("wasvisited", "yeah");
         }
+    }
+
+    public function wilayah()
+    {
+        return $this->db->query("SELECT * FROM wilayah" )->result();
+    }
+
+    public function select_wilayah($id_wilayah)
+    {
+        return $this->db->query("SELECT * FROM destinations INNER JOIN wilayah ON destinations.id_wilayah=wilayah.id_wilayah WHERE wilayah.id_wilayah ='$id_wilayah' ")->result();
+    }
+
+    public function select_id_wilayah()
+    {
+        $id = $this->input->get("id", true);
+        $this->db->where("id_wilayah", $id);
+        return $this->db->get("destinations")->result();
     }
 
 }
