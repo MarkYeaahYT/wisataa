@@ -3,7 +3,29 @@ class Welcome_m extends CI_Model{
 
     public function showdata_xhr()
     {
-        return $this->db->get("destinations")->result();
+
+        $query = $this->db->get("destinations")->result();
+        $result = array();
+        for ($i=0; $i < count($query); $i++) {
+            $this->db->where("id_destination", $query[$i]->id_destination);
+            $visitor = $this->db->get("visitor")->num_rows();
+
+            $this->db->where("id_destination", $query[$i]->id_destination);
+            $com = $this->db->get("comentar")->num_rows();
+            $res = array(
+                "id_destination" => $query[$i]->id_destination,
+                "id_wilayah" => $query[$i]->id_wilayah,
+                "nama_dest" => $query[$i]->nama_dest,
+                "urlgmaps" => $query[$i]->urlgmaps,
+                "image" => $query[$i]->image,
+                "artikel" => $query[$i]->artikel,
+                "visitor" => $visitor,
+                "comentar" => $com,
+            );
+            array_push($result, $res);
+        }
+        // return $this->db->get("destinations")->result();
+        return $result;
     }
 
     public function cari_xhr()
@@ -21,7 +43,15 @@ class Welcome_m extends CI_Model{
     {
         $id = $this->input->get("id", true);
         $this->db->where("id_destination", $id);
-        return $this->db->get("destinations")->result();
+        $dest = $this->db->get("destinations")->result();
+        $this->db->where("id_destination", $id);
+        $visitor = $this->db->get("visitor")->num_rows();
+        $this->db->where("id_destination", $id);
+        $com = $this->db->get("comentar")->num_rows();
+        return $dest + array(
+            "visitor" => $visitor,
+            "comentar" => $com,
+        );
     }
 
     public function genid()

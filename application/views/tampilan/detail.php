@@ -76,7 +76,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container py-lg-4 py-sm-3">
 		<h2 id="judul" class="heading text-capitalize text-center"> </h2>
 		<p class="text mt-2 mb-5 text-center"></p>
-		<h6 class="mt-1"><i class="fa fa-eye"></i> 1000 <i class="fa fa-comment"></i> 55 </h6>'
+		<h6 class="mt-1"><i class="fa fa-eye visitor"></i>  <i class="fa fa-comment comment"></i>  </h6>'
 
 		<div class="row" id="datahere">
 

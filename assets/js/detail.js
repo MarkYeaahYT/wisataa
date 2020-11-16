@@ -22,6 +22,8 @@ $(document).ready(function () {
             $("#home").css('background-image', 'url("/assets/upload/'+r[0].image+'")');
             $("#judul").text(r[0].nama_dest);
             $("#artikel").text(r[0].artikel);
+            $(".visitor").html(r.visitor);
+            $(".comment").html(r.comentar);
             $("#visit").attr("href", r[0].urlgmaps);
 
             // increase visitor
