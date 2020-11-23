@@ -25,7 +25,7 @@ $(document).ready(function () {
 				+'<div class="package-info">'
 					// +'<h6 class="mt-1"><span class=" fa fa-map-marker mr-2"></span>.<i class="fa fa-eye"></i> 1000 <i class="fa fa-comment"></i> 55 <i class="fa fa-star">4</i> </h6>'
                     +'<a target="_blank" href="'+e.urlgmaps+'"> <span class=" fa fa-map-marker mr-2"></span></a>'
-                    +'<i class="fa fa-eye"></i> 1000 <i class="fa fa-comment"></i> 55 <i class="fa fa-star">4</i>'
+                    +'<i class="fa fa-eye"></i> '+e.visitor+' <i class="fa fa-comment"></i> '+e.comentar+' <i class="fa fa-star">00</i>'
 					+'<h5 class="my-2"> '+e.nama_dest+' </h5>'
 					+'<p class=""> '+e.artikel.slice(0, 75)+' ...</p>'
 					+'<ul class="listing mt-3">'
