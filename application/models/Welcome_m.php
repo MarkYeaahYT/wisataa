@@ -155,8 +155,29 @@ class Welcome_m extends CI_Model{
     public function select_id_wilayah()
     {
         $id = $this->input->get("id", true);
-        $this->db->where("id_wilayah", $id);
-        return $this->db->get("destinations")->result();
+        $this->db->where("id_wilayah" , $id);
+        $query = $this->db->get("destinations")->result();
+        $result = array();
+        for ($i=0; $i < count($query); $i++) {
+            $this->db->where("id_destination", $query[$i]->id_destination);
+            $visitor = $this->db->get("visitor")->num_rows();
+
+            $this->db->where("id_destination", $query[$i]->id_destination);
+            $com = $this->db->get("comentar")->num_rows();
+            $res = array(
+                "id_destination" => $query[$i]->id_destination,
+                "id_wilayah" => $query[$i]->id_wilayah,
+                "nama_dest" => $query[$i]->nama_dest,
+                "urlgmaps" => $query[$i]->urlgmaps,
+                "image" => $query[$i]->image,
+                "artikel" => $query[$i]->artikel,
+                "visitor" => $visitor,
+                "comentar" => $com,
+            );
+            array_push($result, $res);
+        }
+        // return $this->db->get("destinations")->result();
+        return $result;
     }
 
     
