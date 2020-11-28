@@ -120,6 +120,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="mybois">
 								<!-- JS proces -->
 						</div>
+						<hr>
+						<div class="">
+							<div class=" pull-left">
+								<button class="prev btn btn-info text-light"> <i class="fa fa-arrow-left"></i> </button>
+							</div>
+							<div class=" pull-right">
+								<button class="next btn btn-info text-light"> <i class="fa fa-arrow-right"></i> </button>
+							</div>
+						</div>
                     </div>
                 </div>
 		

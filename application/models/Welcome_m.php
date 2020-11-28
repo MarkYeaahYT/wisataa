@@ -112,9 +112,12 @@ class Welcome_m extends CI_Model{
 
     public function showcomentar_xhr()
     {
-        $id = $this->input->get("id", true);
+        $page = $this->input->post("page", true);
+        // $page = 0;
+        $id = $this->input->post("id", true);
         $this->db->where("id_destination", $id);
-        return $this->db->get("comentar")->result();
+        $this->db->order_by("date", "desc");
+        return $this->db->get("comentar", 5, $page * 5)->result();
     }
 
     public function addvisitors()
@@ -155,6 +158,8 @@ class Welcome_m extends CI_Model{
         $this->db->where("id_wilayah", $id);
         return $this->db->get("destinations")->result();
     }
+
+    
 
 }
 
