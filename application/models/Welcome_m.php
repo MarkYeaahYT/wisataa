@@ -12,6 +12,10 @@ class Welcome_m extends CI_Model{
 
             $this->db->where("id_destination", $query[$i]->id_destination);
             $com = $this->db->get("comentar")->num_rows();
+            
+            $this->db->select_avg("rating");
+            $this->db->where("id_destinasi", $query[$i]->id_destination);
+            $rating = $this->db->get("ratings")->result();
             $res = array(
                 "id_destination" => $query[$i]->id_destination,
                 "id_wilayah" => $query[$i]->id_wilayah,
@@ -21,6 +25,7 @@ class Welcome_m extends CI_Model{
                 "artikel" => $query[$i]->artikel,
                 "visitor" => $visitor,
                 "comentar" => $com,
+                "rating" => $rating[0]->rating,
             );
             array_push($result, $res);
         }
@@ -99,15 +104,25 @@ class Welcome_m extends CI_Model{
         $coment = $this->input->post("comment",true);
         $nama = $this->input->post("nama",true);
         $destination = $this->input->post("id", true);
-        $date = $this->input->post("date", true);
+        // $date = $this->input->post("date", true);
+        $rating = $this->input->post("rating", true);
 
-        $this->db->set("id_comentar", $this->genid());
+        $id = $this->genid();
+        $this->db->set("id_comentar", $id);
         $this->db->set("comentar", $coment);
         $this->db->set("nama", $nama);
-        $this->db->set("date", $date);
+        // $this->db->set("date", $date);
         $this->db->set("id_destination", $destination);
+        
+        $this->db->insert("comentar");
+        
+        if($rating != null){
+            $this->db->set("id_comment", $id);
+            $this->db->set("rating", $rating);
+            $this->db->set("id_destinasi", $destination);
+            return $this->db->insert("ratings");
+        }
 
-        return $this->db->insert("comentar");
     }
 
     public function showcomentar_xhr()
@@ -178,6 +193,11 @@ class Welcome_m extends CI_Model{
         }
         // return $this->db->get("destinations")->result();
         return $result;
+    }
+
+    public function show_rating()
+    {
+        
     }
 
     

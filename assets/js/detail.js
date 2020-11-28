@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	var rating = null;
 	$(".banner_inner").css("min-height", "500px");
 	// $(".banner_inner_overlay").css("min-height", "500px");
 
@@ -57,6 +58,7 @@ $(document).ready(function () {
 				page: page,
 				id: id,
 				date: datenow,
+				rating: rating
 			},
 			dataType: "JSON",
 			success: function (r) {
@@ -72,7 +74,7 @@ $(document).ready(function () {
 					},
 					dataType: "JSON",
 					success: function (r) {
-						// console.log(r)
+						// console.log("yes")
 						r.forEach((e) => {
 							html =
 								'<hr style="height:2px;border-width:0;color:gray;background-color:gray">' +
@@ -91,11 +93,12 @@ $(document).ready(function () {
 								e.comentar +
 								"</span>" +
 								"<br>" +
+								'<i class="fa fa-star">00</i>'+
+								"<br>" +
 								'<small class="text-light">' +
 								e.date +
 								"</small>" +
 								"</div>";
-
 							$(".mybois").append(html);
 						});
 					},
@@ -128,7 +131,6 @@ $(document).ready(function () {
 					'<div class="pr-2">' +
 					'<img src="/uploads/default.png" alt="" width="35" height="35" class="rounded-circle">' +
 					"</div>" +
-					"<div>" +
 					'<span class="text-light">' +
 					e.nama +
 					"</span>" +
@@ -138,6 +140,8 @@ $(document).ready(function () {
 					'<span class="text-light">' +
 					e.comentar +
 					"</span>" +
+					"<br>" +
+					'<i class="fa fa-star">00</i>'+
 					"<br>" +
 					'<small class="text-light">' +
 					e.date +
@@ -269,4 +273,17 @@ $(document).ready(function () {
 			},
 		});
 	});
+
+	/**
+	 * Ratings
+	 * 
+	 */
+	$("#review").rating({
+        "click": function(e) {
+			// console.log(e);
+			rating = e.stars
+			// console.log(rating.stars)
+        }
+    });
+	  
 });
